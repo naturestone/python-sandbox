@@ -12,8 +12,8 @@ AppData = {
     "NAME": "Sample Application",
     "ASK": "Wie heißt Deine Lieblingsfarbe?",
     "CHOOSE": ["rot", "grün", "blau", "gelb"],
-    "IFOK": ["Sehr schöne Farbe.", "Warum gerade die!?.", "Danke!", "Super!"],
-    "OTHERWISE": ["Kenne ich nicht.", "Soll das eine Farbe sein?", "Was heißt das?", "Habe ich nicht verstanden."]
+    "IFOK": ["Sehr schöne Farbe.", "Geht klar!.", "Danke, das passt!", "Wunderbar. Die gefällt mir!"],
+    "OTHERWISE": ["Ich kenne diese Farbe nicht.", "Soll das eine Farbe sein?", "Versuch es noch einmal?", "Das habe ich nicht verstanden."]
 }
 
 ##########################################################################
