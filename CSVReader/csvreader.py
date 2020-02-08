@@ -1,13 +1,15 @@
 # Python Script: csvparser.py
 # Written 2019 by xd23fe39
 
+import os       # Filesystem Operationen
 import re       # Regular Expressions
 import csv      # CSV DictReader
 # import collections 
 
 # Filenames
-PEOPLE_FILE="people.csv"
-ROLES_FILE="roles.csv"
+BASEDIR="CSVReader/"
+PEOPLE_FILE=BASEDIR + "people.csv"
+ROLES_FILE=BASEDIR + "roles.csv"
 
 # Read and work in Memory cache
 CACHE_PEOPLE = {}
@@ -94,6 +96,7 @@ def print_cache_to_file(filename, cache):
 ## MAIN
 
 print("CSVPARSER Sample Script, Version 19.11.001")
+print("Current Working Directory:", os.getcwd() )
 
 print("\nSTEP 01: print_people()")
 print_people(PEOPLE_FILE)

@@ -1,0 +1,4 @@
+sven;UID=sven;NAME=Sven Mustermann;ROLES=id=6541643658910559104,ou=roles,ou=company,ou=de
+frank;UID=frank;NAME=Frank Mustermann;ROLES=id=6541643658910559107,ou=roles,ou=company,ou=de|id=6541643658910559104,ou=roles,ou=company,ou=de
+thomas;UID=thomas;NAME=Thomas Mustermann;ROLES=id=6541643658910559105,ou=roles,ou=company,ou=de
+peter;UID=peter;NAME=Peter Mustermann;ROLES=id=6541643658910559105,ou=roles,ou=company,ou=de|id=6541643658910559107,ou=roles,ou=company,ou=de
