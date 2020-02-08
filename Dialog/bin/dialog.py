@@ -6,12 +6,16 @@ import random
 ##########################################################################
 # Application Data Structure (Dialog Application)
 
+# Liste mit Farben 
+Colors = ["rot", "grün", "blau", "gelb"]
+
+# Daten für Dialog-Anwendung 
 AppData = {
     "ID": "201912240050",
     "TYPE": "DIALOG",
     "NAME": "Sample Application",
     "ASK": "Wie heißt Deine Lieblingsfarbe?",
-    "CHOOSE": ["rot", "grün", "blau", "gelb"],
+    "CHOOSE": Colors,
     "IFOK": ["Sehr schöne Farbe.", "Geht klar!.", "Danke, das passt!", "Wunderbar. Die gefällt mir!"],
     "OTHERWISE": ["Ich kenne diese Farbe nicht.", "Soll das eine Farbe sein?", "Versuch es noch einmal?", "Das habe ich nicht verstanden."]
 }
