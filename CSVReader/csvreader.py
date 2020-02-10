@@ -7,9 +7,9 @@ import csv      # CSV DictReader
 # import collections 
 
 # Filenames
-BASEDIR="CSVReader/"
-PEOPLE_FILE=BASEDIR + "people.csv"
-ROLES_FILE=BASEDIR + "roles.csv"
+DATADIR="CSVReader/"
+PEOPLE_FILE=DATADIR + "people.csv"
+ROLES_FILE=DATADIR + "roles.csv"
 
 # Read and work in Memory cache
 CACHE_PEOPLE = {}
