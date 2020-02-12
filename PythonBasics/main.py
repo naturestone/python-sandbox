@@ -6,74 +6,22 @@ Python Basics.
 Autor: lf
 """
 
-##########################################################################
-# Variablen
-
-# Literal / Zeichenkette
-PROGRAM_TITLE="Python Basics, Version 20.02"
+# Programmtitel für Anzeige
 PROGRAM_TITLE='Python Basics, Version 20.02'
-
-# Liste oder Listenobjekt (Array)
-FARBEN=["rot", "grün", "blau"]
-
-# Dictionary (Hash)
-PERSON={'VORNAME': 'Lisa', 'ALTER': 22, 'GESCHLECHT': 'w'}
-
-#  List of Dictionary 
-PERSONEN=[
-    {'VORNAME': 'Lisa', 'ALTER': 22, 'GESCHLECHT': 'w'},
-    {'VORNAME': 'Marco', 'ALTER': 17, 'GESCHLECHT': 'm'}
-]
-
-##########################################################################
-# Funktion lineTest mit Zählerschleife for .. in range(n)
-# n => Anzahl der Schleifendurchläufe
-# z => Zeichen, die pro Schleifendurchlauf angehängt werden (Optional)
-
-def linieTest(n, z="#"):
-    buff="   "
-    for i in range(n):
-        buff+=z
-    print(buff)
-
-def blockTest(m, n, z="B"):
-    for i in range(m):
-        linieTest(n, z)
-
-def listeHTest(colors):
-    buff="   "
-    for col in colors:
-        buff+=col+"; "
-    print(buff)
-
-def listeTest(colors):
-    for col in colors:
-        print(col)
-
-def dictionaryTest(dict):
-    for attr, value in dict.items():
-        attr+=":"
-        print("   {:15} {}".format(attr, value))
-
-def listOfDictionaryTest(liste):
-    for pers in liste:
-        dictionaryTest(pers)
 
 ##########################################################################
 # Ausgaben und Eingaben -  print/input
 
 def dialogTest():
     print(PROGRAM_TITLE, "\n")          # Ausgabe des Programmtitels + Leerzeile
-    buf = Input("  Code: ")             # Tastatureingabe einholen
-    print("Eingabe: {:4}".format(buf))  # Eingabeaufforderung und Anzeige
-    print("Fertig.")
+    buf = input("  Code: ")             # Tastatureingabe einlesen
+    print("  In: {:4}".format(buf))     # Eingabeaufforderung und Anzeige
+    print("\nFertig.")
 
 ##########################################################################
 # Bedingungen - if/elif/else
 
-x = 2
-
-def conditionTest():
+def conditionTest(x = 2):
     c = x == 2                  # Gleichheit
     c = x != 2                  # Ungleichheit
     c = x <= 2                  # kleiner gleich
@@ -117,10 +65,7 @@ def loopTest():
 
 import math                 # Import module math
 
-x=1.456                     # define a float x
-y=2.567                     # define a float y
-
-def mathTest():
+def mathTest(x=1.456, y=2.567):
     r = math.pi             # die Zahl PI
     r = math.sqrt(x)        # Return the square root of x. 
     r = math.floor(x)       # Return the largest integer <= x.
@@ -138,16 +83,7 @@ def mathTest():
 # MAIN Procedure
 
 def main():
-    # Programmtitel ausgeben
-    print("{:s}\n".format(PROGRAM_TITLE))
-    # Aufruf der Funktion lineTest() mit n=5
-    # blockTest(8, 10, "L")
-    # FARBEN.append(input("Farbe eingeben: "))
-    # listeTest(FARBEN)
-    # dictionaryTest(PERSON)
-    # listOfDictionaryTest(PERSONEN)
-    # Exit Code setzen
-    mathTest();
+    dialogTest()
     exit(0)
 
 if __name__ == "__main__":
