@@ -60,6 +60,59 @@ def listOfDictionaryTest(liste):
         dictionaryTest(pers)
 
 ##########################################################################
+# Ausgaben und Eingaben
+
+def dialogTest():
+    print(PROGRAM_TITLE, "\n")          # Ausgabe des Programmtitels + Leerzeile
+    buf = Input("  Code: ")             # Tastatureingabe einholen
+    print("Eingabe: {:4}".format(buf))  # Eingabeaufforderung und Anzeige
+    print("Fertig.")
+
+##########################################################################
+# Bedingungen
+
+x = 2
+
+def conditionTest():
+    if True:
+    if False:
+    if x == 2:                  # Gleichheit
+    if x != 2:                  # Ungleichheit
+    if x <= 2:                  # kleiner gleich
+    if x >= 2:                  # größer gleich
+    if x >= 1 and x < 3:        # größer gleich 1 und kleiner 3
+    if x == 2:                  # Prüfe ob x gleich 2 ist...
+        print("Zwei")           #   dann gebe aus...
+    elif x == 3:                # sonst prüfe auf x == 3
+        print("Drei")           #    dann gebe aus ...
+    else:                       # sonst etwas anderes.
+        print("Nicht zwei oder drei.")
+    return True                 # Rückgabewert
+    
+    
+
+##########################################################################
+# Schleifen
+
+listOfColors = ["red", "green", "yellow", "black", "white"]
+
+def loopTest():
+    for i in range(10):
+    for i in listOfColors:
+        print(i)
+    for i in range(10):        # Zählschleife (loops)
+        if i == 4:             # Bedingung prüfen und... 
+            continue           #  weiter mit nächstem Schritt
+        if i == 5:             # Bedingung prüfen und...
+            break              #  vorzeitiger Abbruch der Schleife
+
+    i = ""                     # setze Schleifenvariable für Vorbedingung
+    while i == 'q':            # wiederhole solange bis 'q' eingegeben wird
+        i = input(" In: ")     # hole Eingabe
+        if i == 'c':           # Bedingung prüfen und ...
+            break              #  vorzeitiger Abbruch der Schleife
+
+##########################################################################
 # Math
 
 import math                 # Import module math
@@ -73,8 +126,8 @@ def mathTest():
     r = math.floor(x)       # Return the largest integer <= x.
     r = math.ceil(x)        # Return the smallest integer >= x.
     r = math.pow(x,y)       # Return x**y (x to the power of y).
-    r = math.log(x)
-    r = math.log10(x)
+    r = math.log(x)         # Return the logarithm of x to the given base.
+    r = math.log10(x)       # Return the logarithm of x to base 10.
     r = math.exp(x)         # Return e raised to the power of x.
     r = math.cos(x)         # Return the cosine of x (measured in radians).
     r = math.sin(x)         # Return the sine of x (measured in radians).
