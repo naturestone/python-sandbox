@@ -60,7 +60,7 @@ def listOfDictionaryTest(liste):
         dictionaryTest(pers)
 
 ##########################################################################
-# Ausgaben und Eingaben
+# Ausgaben und Eingaben -  print/input
 
 def dialogTest():
     print(PROGRAM_TITLE, "\n")          # Ausgabe des Programmtitels + Leerzeile
@@ -69,18 +69,16 @@ def dialogTest():
     print("Fertig.")
 
 ##########################################################################
-# Bedingungen
+# Bedingungen - if/elif/else
 
 x = 2
 
 def conditionTest():
-    if True:
-    if False:
-    if x == 2:                  # Gleichheit
-    if x != 2:                  # Ungleichheit
-    if x <= 2:                  # kleiner gleich
-    if x >= 2:                  # größer gleich
-    if x >= 1 and x < 3:        # größer gleich 1 und kleiner 3
+    c = x == 2                  # Gleichheit
+    c = x != 2                  # Ungleichheit
+    c = x <= 2                  # kleiner gleich
+    c = x >= 2                  # größer gleich
+    c = x >= 1 and x < 3        # größer gleich 1 und kleiner 3
     if x == 2:                  # Prüfe ob x gleich 2 ist...
         print("Zwei")           #   dann gebe aus...
     elif x == 3:                # sonst prüfe auf x == 3
@@ -88,16 +86,16 @@ def conditionTest():
     else:                       # sonst etwas anderes.
         print("Nicht zwei oder drei.")
     return True                 # Rückgabewert
-    
-    
 
 ##########################################################################
-# Schleifen
+# Schleifen - for und while
 
 listOfColors = ["red", "green", "yellow", "black", "white"]
+dictOfPeople = [{"NAME":"Max", "AGE": 22}, {"NAME":"Lea", "AGE": 20}]
 
 def loopTest():
     for i in range(10):
+        print(i)
     for i in listOfColors:
         print(i)
     for i in range(10):        # Zählschleife (loops)
@@ -105,7 +103,9 @@ def loopTest():
             continue           #  weiter mit nächstem Schritt
         if i == 5:             # Bedingung prüfen und...
             break              #  vorzeitiger Abbruch der Schleife
-
+    for p in dictOfPeople:     # Datensätze aus Liste holen
+        for n,a in p.items():  # Datensatz holen und aufschlüsseln
+            print(n,a);        # Datensatz ausgeben
     i = ""                     # setze Schleifenvariable für Vorbedingung
     while i == 'q':            # wiederhole solange bis 'q' eingegeben wird
         i = input(" In: ")     # hole Eingabe
