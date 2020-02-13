@@ -8,6 +8,7 @@ Autor: lf
 
 # Programmtitel für Anzeige
 PROGRAM_TITLE='Python Basics, Version 20.02'
+PYTHON_BOOK='https://py-tutorial-de.readthedocs.io/de/python-3.3/'
 
 ##########################################################################
 # Ausgaben und Eingaben -  print/input
@@ -17,6 +18,21 @@ def dialogTest():
     buf = input("  Code: ")             # Tastatureingabe einlesen
     print("  In: {:4}".format(buf))     # Eingabeaufforderung und Anzeige
     print("\nFertig.")
+
+##########################################################################
+# Ausgaben formatieren print,String.format()
+
+text = "Name {0} Age {1} Gender {2}\n"      # String template
+data = ["Smith", "35", "male"]              # List 
+table = {"ID": 123, "ROLE": "Master"}       # Dictionary
+
+def printTest():
+    print('Prints the values to a stream, or to sys.stdout by default')
+    print("Return a formatted version of formtext, using substitutions ")
+    print(text.format(*data))                        # substitute all items
+    print("|{ID:10d}|{ROLE:>10s}|".format(**table))  # Schlüsselwortargumente
+    print("|{0:10.3f}|{0:5.0f}|".format(3.1415))     # formatiere Zahlen
+    
 
 ##########################################################################
 # Bedingungen - if/elif/else
@@ -84,6 +100,7 @@ def mathTest(x=1.456, y=2.567):
 
 def main():
     dialogTest()
+    printTest()
     exit(0)
 
 if __name__ == "__main__":
