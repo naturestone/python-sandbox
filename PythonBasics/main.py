@@ -1,7 +1,18 @@
 #!/usr/bin/python
 ## -*- coding: utf-8 -*-
-## Python Basics. 
-## Autor: lf
+
+DESCRIPTION="""
+** Python Basics. 
+** Autor: lf
+**
+** Darstellung der wichtigsten Datentypen und Funktionen für
+** den Einstieg in Python. Die Beispiele hier sind nur zur
+** Demonstration. Durch Eingabe von help oder printTest
+** können die Funktionen aufgerufen werden.
+**
+**    python main.py
+** 
+"""
 
 # Programmtitel für Anzeige
 PROGRAM_TITLE="Python Basics, Version 20.02"
@@ -97,6 +108,9 @@ def dialogTest():
     print("  Call: {0:s}\n".format(buf))  # Eingabeaufforderung und Anzeige
     buf()
     print("\nFertig.")
+
+def help():
+    print DESCRIPTION                     # Ausgabe von DESCRIPTION
 
 ##########################################################################
 # MAIN Procedure
