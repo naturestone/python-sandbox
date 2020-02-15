@@ -1,10 +1,7 @@
 #!/usr/bin/python
 ## -*- coding: utf-8 -*-
-
-"""
-Python Basics. 
-Autor: lf
-"""
+## Python Basics. 
+## Autor: lf
 
 # Programmtitel für Anzeige
 PROGRAM_TITLE="Python Basics, Version 20.02"
