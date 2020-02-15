@@ -7,17 +7,8 @@ Autor: lf
 """
 
 # Programmtitel für Anzeige
-PROGRAM_TITLE='Python Basics, Version 20.02'
+PROGRAM_TITLE="Python Basics, Version 20.02"
 PYTHON_BOOK='https://py-tutorial-de.readthedocs.io/de/python-3.3/'
-
-##########################################################################
-# Ausgaben und Eingaben -  print/input
-
-def dialogTest():
-    print(PROGRAM_TITLE, "\n")          # Ausgabe des Programmtitels + Leerzeile
-    buf = input("  Code: ")             # Tastatureingabe einlesen
-    print("  In: {:4}".format(buf))     # Eingabeaufforderung und Anzeige
-    print("\nFertig.")
 
 ##########################################################################
 # Ausgaben formatieren print,String.format()
@@ -59,21 +50,23 @@ dictOfPeople = [{"NAME":"Max", "AGE": 22}, {"NAME":"Lea", "AGE": 20}]
 
 def loopTest():
     for i in range(10):
-        print(i)
+        print(i),              # Trick: Zeilenvorschub unterdrücken mit ,
     for i in listOfColors:
-        print(i)
+        print(i),
     for i in range(10):        # Zählschleife (loops)
         if i == 4:             # Bedingung prüfen und... 
             continue           #  weiter mit nächstem Schritt
         if i == 5:             # Bedingung prüfen und...
             break              #  vorzeitiger Abbruch der Schleife
+    print                      # nur Zeilenvorschub ausgeben
     for p in dictOfPeople:     # Datensätze aus Liste holen
         for n,a in p.items():  # Datensatz holen und aufschlüsseln
-            print(n,a);        # Datensatz ausgeben
-    i = ""                     # setze Schleifenvariable für Vorbedingung
-    while i == 'q':            # wiederhole solange bis 'q' eingegeben wird
-        i = input(" In: ")     # hole Eingabe
-        if i == 'c':           # Bedingung prüfen und ...
+            print(n,a)         # Datensatz ausgeben
+    i = 0                      # setze Schleifenvariable für Vorbedingung 
+    while i < 10:              # wiederhole solange bis 'q' eingegeben wird
+        i+=1                   # erhöhe um 1
+        if i == 5:             # Bedingung prüfen und ...
+            print(i)           #  und raus...
             break              #  vorzeitiger Abbruch der Schleife
 
 ##########################################################################
@@ -94,13 +87,26 @@ def mathTest(x=1.456, y=2.567):
     r = math.sin(x)         # Return the sine of x (measured in radians).
     r = math.radians(x)     # Convert angle x from degrees to radians.
     r = abs(x)              # Return the absolute value of the argument.
+    # Demo-Ausgabe von Gleitkommazahlen (Floatingpoint Types: float, double)
+    print ("PI={}".format(math.pi))
+    print ("COS(x)={:.4f}".format(math.cos(x)))
+
+##########################################################################
+# Ausgaben und Eingaben -  print/input
+
+def dialogTest():
+    print(PROGRAM_TITLE + "\n")           # Ausgabe des Programmtitels + Leerzeile
+    buf = input("  Help: ")               # Tastatureingabe einlesen
+    print("  Call: {0:s}\n".format(buf))  # Eingabeaufforderung und Anzeige
+    buf()
+    print("\nFertig.")
 
 ##########################################################################
 # MAIN Procedure
 
 def main():
     dialogTest()
-    printTest()
+    # printTest()
     exit(0)
 
 if __name__ == "__main__":
