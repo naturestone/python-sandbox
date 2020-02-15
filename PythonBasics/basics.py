@@ -1,16 +1,16 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 ## -*- coding: utf-8 -*-
 
-DESCRIPTION="""
+DESCRIPTION = """
+***
 ** Python Basics. 
 ** Autor: lf
 **
-** Darstellung der wichtigsten Datentypen und Funktionen für
-** den Einstieg in Python. Die Beispiele hier sind nur zur
-** Demonstration. Durch Eingabe von help oder printTest
+** Darstellung der wichtigsten Datentypen und Funktionen für den Einstieg in Python. 
+** Die Beispiele hier sind nur zur Demonstration. Durch Eingabe von help oder printTest
 ** können die Funktionen aufgerufen werden.
 **
-**    python main.py
+**    python3 main.py
 ** 
 """
 
@@ -28,7 +28,7 @@ table = {"ID": 123, "ROLE": "Master"}       # Dictionary
 def printTest():
     print('Prints the values to a stream, or to sys.stdout by default')
     print("Return a formatted version of formtext, using substitutions ")
-    print(text.format(*data))                        # substitute all items
+    print(text.format(*data))                        # expands data array
     print("|{ID:10d}|{ROLE:>10s}|".format(**table))  # Schlüsselwortargumente
     print("|{0:10.3f}|{0:5.0f}|".format(3.1415))     # formatiere Zahlen
     
@@ -58,15 +58,15 @@ dictOfPeople = [{"NAME":"Max", "AGE": 22}, {"NAME":"Lea", "AGE": 20}]
 
 def loopTest():
     for i in range(10):
-        print(i),              # Trick: Zeilenvorschub unterdrücken mit ,
+        print(i, end=" ")      # Trick: Zeilenvorschub unterdrücken mit end=
     for i in listOfColors:
-        print(i),
+        print(i,end=" ")
     for i in range(10):        # Zählschleife (loops)
         if i == 4:             # Bedingung prüfen und... 
             continue           #  weiter mit nächstem Schritt
         if i == 5:             # Bedingung prüfen und...
             break              #  vorzeitiger Abbruch der Schleife
-    print                      # nur Zeilenvorschub ausgeben
+    print()                    # nur Zeilenvorschub ausgeben
     for p in dictOfPeople:     # Datensätze aus Liste holen
         for n,a in p.items():  # Datensatz holen und aufschlüsseln
             print(n,a)         # Datensatz ausgeben
@@ -102,15 +102,15 @@ def mathTest(x=1.456, y=2.567):
 ##########################################################################
 # Ausgaben und Eingaben -  print/input
 
+def help():
+    print (DESCRIPTION)                    # Ausgabe von DESCRIPTION
+
 def dialogTest():
     print(PROGRAM_TITLE + "\n")           # Ausgabe des Programmtitels + Leerzeile
-    buf = input("  Help: ")               # Tastatureingabe einlesen
-    print("  Call: {0:s}\n".format(buf))  # Eingabeaufforderung und Anzeige
-    buf()
-    print("\nFertig.")
-
-def help():
-    print DESCRIPTION                     # Ausgabe von DESCRIPTION
+    buf = input("Name der Funktion: ")    # Tastatureingabe einlesen (py2: raw_input)
+    cmd = buf + "()"                      # Funktionsaufruf für eval() bauen
+    eval(cmd)                             # eval() führt Python Code aus
+    print("OK.")
 
 ##########################################################################
 # MAIN Procedure
