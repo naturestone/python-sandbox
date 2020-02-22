@@ -26,16 +26,17 @@ def unameTest():
 # help() und usage() 
 
 def help():
-    print DESCRIPTION,      # Trick: ,-Operator unterdrückt Zeilenvorschub
+    print(DESCRIPTION,END="")      # Trick: ,-Operator unterdrückt Zeilenvorschub
 
 ##########################################################################
 # MAIN Procedure
 
 def main():
     try:
-        cmd = input("Command: ")
-        cmd()
-        exit(0)
+        str = input("Command: ")    # python2: raw_input()
+        cmd = str + "()"
+        eval(cmd) 
+        exit(1)
     except Exception:
         print("Unknown!")
     finally:
