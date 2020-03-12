@@ -1,0 +1,5 @@
+employeenumber,uid,cn,mail,active
+"123456","sven","Sven Mustermann","sven.mustermann@mail.com",1
+"123457","frank","Frank Mustermann","frank.mustermann@mail.com",1
+"123458","thomas","Thomas Mustermann","thomas.mustermann@mail.com",0
+"123459","peter","Peter Mustermann","peter.mustermann@mail.com",1
