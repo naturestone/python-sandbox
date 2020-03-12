@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 ## -*- coding: utf-8 -*-
 
-# Daten für Dialog-Anwendung 
+# Module einbinden
+import os       # Filesystem Operationen
+import re       # Regular Expressions
+import csv      # CSV DictReader
+
+# Anwendungsdaten
 AppData = {
     "ID": "2020031123",
     "TYPE": "Application",
@@ -10,13 +15,10 @@ AppData = {
     "INFILE": "../data/people.csv"
 }
 
+# Statistikdaten (weitere Felder werden dynamisch erzeugt)
 StatisticData = {
-
+    "NAME": "CSV-Statistik-Objekt"
 }
-
-import os       # Filesystem Operationen
-import re       # Regular Expressions
-import csv      # CSV DictReader
 
 ##########################################################################
 # Application Class (Dialog Application)
@@ -52,16 +54,16 @@ class Application:
                         print("count={0}".format(count))
                     print("{0}={1} ".format(name,value))      # without newline: end = " "
                     try:
-                        # Hole pro Spalte ein vorhandenes Statistikfeld wenn vorhanden
+                        # hole vorhandenes Statistikfeld oder (Aunnahmeverletzung wenn nicht vorhanden)
                         stdata = StatisticData[name]
                     except KeyError:
-                        # Erzeuge pro Spalte ein Statistikfeld (initiales anlegen); unterscheide Typ String von Bool
+                        # erzeuge pro Spalte ein Statistikfeld (initiales anlegen); unterscheide Typ String von Bool
                         if name == 'active':
                             StatisticData[name] = {'EMPTY':0, 'NOTEMPTY':0, 'ACTIVE': 0, 'INACTIVE': 0}     # Bool
                         else:
                             StatisticData[name] = {'EMPTY':0, 'NOTEMPTY':0}     # String (Standardtyp)
 
-                    # Prüfe und zähle hoch
+                    # Prüfe und zähle hoch (alle Typen)
                     stdata = StatisticData[name]
                     if value == "":
                         stdata['EMPTY'] = stdata['EMPTY'] + 1
