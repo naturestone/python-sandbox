@@ -12,12 +12,8 @@ AppData = {
     "TYPE": "Application",
     "NAME": "CSV Parser",
     "VERSION": "Version 0.1",
-    "INFILE": "../data/people.csv"
-}
-
-# Statistikdaten (weitere Felder werden dynamisch erzeugt)
-StatisticData = {
-    "NAME": "CSV-Statistik-Objekt"
+    "INFILE": "../data/people.csv",
+    "COLSTAT": {}
 }
 
 ##########################################################################
@@ -33,10 +29,12 @@ class Application:
         print("{0:s}, {1:s} ({2:s})".format(self.data["NAME"], self.data["VERSION"], self.data["ID"]))
 
     def dump(self, filename = ""):
-        load_file = self.data["INFILE"]
+        load_file = self.data["INFILE"]         # CSV Filename
         if filename != "":
             load_file = filename
         print("Load File: {0}\n".format(load_file))
+
+        colstat = self.data['COLSTAT']          # Column Statistic (Dictionary, Hash)
 
         # Öffne eine CSV-Datei
         with open(load_file) as csvfile:
@@ -55,16 +53,16 @@ class Application:
                     print("{0}={1} ".format(name,value))      # without newline: end = " "
                     try:
                         # hole vorhandenes Statistikfeld oder (Aunnahmeverletzung wenn nicht vorhanden)
-                        stdata = StatisticData[name]
+                        stdata = colstat[name]
                     except KeyError:
                         # erzeuge pro Spalte ein Statistikfeld (initiales anlegen); unterscheide Typ String von Bool
                         if name == 'active':
-                            StatisticData[name] = {'EMPTY':0, 'NOTEMPTY':0, 'ACTIVE': 0, 'INACTIVE': 0}     # Bool
+                            colstat[name] = {'EMPTY':0, 'NOTEMPTY':0, 'ACTIVE': 0, 'INACTIVE': 0}     # Bool
                         else:
-                            StatisticData[name] = {'EMPTY':0, 'NOTEMPTY':0}     # String (Standardtyp)
+                            colstat[name] = {'EMPTY':0, 'NOTEMPTY':0}     # String (Standardtyp)
 
                     # Prüfe und zähle hoch (alle Typen)
-                    stdata = StatisticData[name]
+                    stdata = colstat[name]
                     if value == "":
                         stdata['EMPTY'] = stdata['EMPTY'] + 1
                     if value != "":
@@ -80,7 +78,7 @@ class Application:
                 # Eine Leerzeile pro Datenobjekt
                 print()
 
-        print(StatisticData)
+        print(colstat)
 
         print("\nCompleted: {} items.".format(count))
         return 0
