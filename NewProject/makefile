@@ -22,4 +22,8 @@ print-version: dump
 requirements:
 	sudo apt-get install pandoc 
 
+tar-project:
+	tar -cvf ../NewPythonProject.tar ../NewProject
+	pwd
+
 .PHONY: dump test
