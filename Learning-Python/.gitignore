@@ -1,0 +1,5 @@
+*.tar
+*.pdf
+*.local
+[Ll]ocal/
+[Bb]uild/
